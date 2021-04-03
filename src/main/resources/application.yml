@@ -1,0 +1,9 @@
+spring:
+  ldap:
+    urls: ldap://localhost:389
+    base: ou=users,dc=my-company,dc=com
+    username: cn=admin,dc=my-company,dc=com
+    password: Admin123
+
+ldap:
+  userDnPattern: uid={0}

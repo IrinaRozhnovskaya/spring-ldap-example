@@ -1,0 +1,19 @@
+# LDIF Export for dc=my-company,dc=com
+
+version: 1
+
+# Entry 3: ou=users,dc=my-company,dc=com
+dn: ou=users,dc=my-company,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: users
+
+# Entry 4: uid=user,ou=users,dc=my-company,dc=com
+dn: uid=user,ou=users,dc=my-company,dc=com
+cn: User
+givenname: User
+objectclass: inetOrgPerson
+objectclass: top
+sn: User
+uid: user
+userpassword: password

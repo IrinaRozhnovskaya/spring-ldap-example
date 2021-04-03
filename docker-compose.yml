@@ -1,0 +1,27 @@
+version: '3.8'
+networks:
+  my-company.com:
+services:
+  ldap:
+    image: osixia/openldap:1.5.0
+    container_name: ldap
+    hostname: ldap.my-company.com
+    environment:
+      - LDAP_ORGANISATION="My Company Inc."
+      - LDAP_DOMAIN=my-company.com
+      - LDAP_ADMIN_PASSWORD=Admin123
+    ports:
+      - "389:389"
+      - "636:636"
+    networks: [my-company.com]
+  ldap-admin:
+    image: osixia/phpldapadmin:0.9.0
+    container_name: ldap-admin
+    hostname: ldap-admin
+    environment:
+      - PHPLDAPADMIN_LDAP_HOSTS=ldap
+    ports:
+      - "6443:443"
+    depends_on:
+      - ldap
+    networks: [my-company.com]

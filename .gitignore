@@ -1,0 +1,11 @@
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log*
+set-env.cmd
+.DS_Store
+Thumbs.db
+target/
+build/
+/out/
