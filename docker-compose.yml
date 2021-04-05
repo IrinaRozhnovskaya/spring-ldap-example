@@ -3,13 +3,16 @@ networks:
   my-company.com:
 services:
   ldap:
-    image: osixia/openldap:1.5.0
     container_name: ldap
     hostname: ldap.my-company.com
+    build: ./ldap
     environment:
       - LDAP_ORGANISATION="My Company Inc."
       - LDAP_DOMAIN=my-company.com
       - LDAP_ADMIN_PASSWORD=Admin123
+      - LDAP_BACKUP_CONFIG_CRON_EXP="* * * * *"
+      - LDAP_BACKUP_DATA_CRON_EXP="*/5 * * * *"
+      - LDAP_BACKUP_TTL=7
     ports:
       - "389:389"
       - "636:636"

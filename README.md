@@ -7,31 +7,6 @@ The goal of this sample is to play with [`Spring Boot`](https://docs.spring.io/s
   ```
   docker-compose up -d
   ```
-
-## Import OpenLDAP users 
-
-There are two ways to import users
-
-### using phpldapadmin
-
-- Go to https://localhost:6443
-
-- Login with the following credentials
-
-  ```
-  Login DN: cn=admin,dc=my-company,dc=com
-  Password: Admin123
-  ```
-
-- Import the file `spring-ldap-example/ldap/test-data.ldif`
-
-### or running script
-
-  ```
-  cd ldap
-  ./import-openldap-users.sh
-  ```
-
 ## Run application
 
   ```
@@ -71,3 +46,9 @@ There are two ways to import users
   ```
   docker-compose down -v
   ```
+
+## Reference Documentation
+
+- [`Docker OpenLDAP`](https://github.com/osixia/docker-openldap/)
+- [`LDAP server administration with phpLDAPadmin`](https://github.com/osixia/docker-phpLDAPadmin/)
+- [`LDAP with Spring Security`](https://docs.spring.io/spring-security/site/docs/3.0.x/reference/ldap.html) 
